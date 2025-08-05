@@ -107,7 +107,9 @@ function restoreProgress() {
   const saved = JSON.parse(sessionStorage.getItem("progress") || "{}");
   Object.entries(saved).forEach(([idx, val]) => {
     const radio = document.querySelector(`input[name="question-${idx}"][value="${val}"]`);
-    if (radio) radio.checked = true;
+    if (radio) {
+      radio.setAttribute("checked", "true");   // <- attribute, not property
+    }
   });
 }
 
