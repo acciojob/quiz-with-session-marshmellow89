@@ -120,7 +120,7 @@ function renderQuestions() {
     const div = document.createElement("div");
 
     const prompt = document.createElement("h3");
-    prompt.textContent = `${qIdx + 1}. ${q.question}`;
+    prompt.textContent = q.question;
     div.appendChild(prompt);
 
     q.choices.forEach((choice) => {
